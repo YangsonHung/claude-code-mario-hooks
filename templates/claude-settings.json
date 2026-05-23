@@ -5,17 +5,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_pipe.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/01_SessionStart_smb_pipe.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
     ],
-    "SessionEnd": [
+    "Setup": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_gameover.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/02_Setup_smb_1-up.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
@@ -25,7 +25,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_coin.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/03_UserPromptSubmit_smb_coin.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "UserPromptExpansion": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/04_UserPromptExpansion_smb_fireball.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
@@ -36,7 +47,29 @@
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_jump-small.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/05_PreToolUse_smb_jump-small.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/06_PermissionRequest_smb_jump-super.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/07_PermissionDenied_smb_bump.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
@@ -47,17 +80,81 @@
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_stomp.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/08_PostToolUse_smb_stomp.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/09_PostToolUseFailure_smb_warning.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "PostToolBatch": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/10_PostToolBatch_smb_world_clear.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
     ],
     "Notification": [
       {
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_powerup.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/11_Notification_smb_pause.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/12_SubagentStart_smb_powerup_appears.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/13_SubagentStop_smb_flagpole.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "TaskCreated": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/14_TaskCreated_smb2_cherry.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/15_TaskCompleted_smb_stage_clear.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
@@ -67,27 +164,146 @@
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_stage_clear.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/16_Stop_smb_fireworks.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
     ],
-    "SubagentStop": [
+    "StopFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/17_StopFailure_smb_mariodie.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "TeammateIdle": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_flagpole.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/18_TeammateIdle_smb_powerup.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "InstructionsLoaded": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/19_InstructionsLoaded_smb_vine.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "ConfigChange": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/20_ConfigChange_smb_bowserfire.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "CwdChanged": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/21_CwdChanged_smb2_enter_door.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "FileChanged": [
+      {
+        "matcher": ".env|.envrc|CLAUDE.md|settings.json|settings.local.json",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/22_FileChanged_smb_breakblock.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "WorktreeCreate": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/23_WorktreeCreate_smb2_door_appears.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/24_WorktreeRemove_smb_bowserfalls.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
     ],
     "PreCompact": [
       {
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_warning.wav"
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/25_PreCompact_smb_kick.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/26_PostCompact_smb2_grow.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "Elicitation": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/27_Elicitation_smb2_pickup.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "ElicitationResult": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/28_ElicitationResult_smb2_boss_down.wav\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay \"{{INSTALL_DIR}}/sounds/29_SessionEnd_smb_gameover.wav\" >/dev/null 2>&1 &"
           }
         ]
       }
