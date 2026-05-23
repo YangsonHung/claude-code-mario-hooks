@@ -1,0 +1,96 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_pipe.wav"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_gameover.wav"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_coin.wav"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_jump-small.wav"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_stomp.wav"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_powerup.wav"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_stage_clear.wav"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_flagpole.wav"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "{{REPO_DIR}}/scripts/play-sound.sh smb_warning.wav"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+filename	url	required
+smb_1-up.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_1-up.wav	false
+smb_bowserfalls.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_bowserfalls.wav	false
+smb_breakblock.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_breakblock.wav	false
+smb_coin.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav	true
+smb_fireball.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_fireball.wav	false
+smb_flagpole.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_flagpole.wav	true
+smb_gameover.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_gameover.wav	true
+smb_jump-small.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_jump-small.wav	true
+smb_pipe.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_pipe.wav	true
+smb_powerup.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_powerup.wav	true
+smb_stage_clear.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_stage_clear.wav	true
+smb_stomp.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_stomp.wav	true
+smb_warning.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_warning.wav	true
+smb_world_clear.wav	https://themushroomkingdom.net/sounds/wav/smb/smb_world_clear.wav	false
