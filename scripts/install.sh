@@ -3,7 +3,6 @@ set -euo pipefail
 
 readonly PROJECT_ARCHIVE_URL="${CLAUDE_CODE_MARIO_HOOKS_ARCHIVE_URL:-https://github.com/YangsonHung/claude-code-mario-hooks/archive/refs/heads/main.tar.gz}"
 readonly DEFAULT_INSTALL_DIR="$HOME/.claude/claude-code-mario-hooks"
-readonly DEFAULT_SETTINGS_ROOT='~/.claude/claude-code-mario-hooks'
 
 SCRIPT_PATH="${BASH_SOURCE[0]:-$0}"
 INSTALL_DIR="${CLAUDE_CODE_MARIO_HOOKS_DIR:-$DEFAULT_INSTALL_DIR}"
@@ -145,7 +144,16 @@ download_sounds() {
   done
 }
 
-# Render the Claude Code settings template with a stable user-home path.
+settings_root_for_install_dir() {
+  local install_dir="$1"
+  if [[ "$install_dir" == "$HOME"/* ]]; then
+    printf '$HOME/%s\n' "${install_dir#"$HOME"/}"
+  else
+    printf '%s\n' "$install_dir"
+  fi
+}
+
+# Render the Claude Code settings template with a shell-expandable path.
 generate_settings() {
   local template="$1"
   local settings_root="$2"
@@ -204,7 +212,8 @@ main() {
 
   mkdir -p "$(dirname "$INSTALL_DIR")"
   local install_dir="$(cd "$(dirname "$INSTALL_DIR")" && pwd)/$(basename "$INSTALL_DIR")"
-  local settings_root="$DEFAULT_SETTINGS_ROOT"
+  local settings_root
+  settings_root="$(settings_root_for_install_dir "$install_dir")"
   local manifest="$source_dir/manifest/sounds.tsv"
   local template="$source_dir/templates/claude-settings.json"
   local output="${OUTPUT_PATH:-$install_dir/claude-settings.generated.json}"
